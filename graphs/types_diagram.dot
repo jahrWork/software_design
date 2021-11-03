@@ -1,0 +1,12 @@
+digraph G {
+	graph [grap_name="Diagrama de types"];
+	node [label="\N"];
+	graph [bb="0,0,206,163"];
+	subgraph cluster_API_Indoor_solar_distribution {
+		graph [label=API_Indoor_solar_distribution,
+			bb="8,8,198,155"];
+		vertex [pos="103,34", width="0.89579", height="0.5"];
+		Plane_Surface [pos="103,106", width="1.7506", height="0.5"];
+		Plane_Surface -> vertex [pos="e,103,52.104 103,87.697 103,79.983 103,70.712 103,62.112"];
+	}
+}

@@ -1,0 +1,6 @@
+digraph G {
+	graph [dpi=300, name="Diagrama import"];
+	node [label="\N"];
+	graph [bb="0,0,54,38"];
+	main [label=main, shape=Mrecord, pos="27,19", width="0.75", height="0.51389"];
+}
