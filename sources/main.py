@@ -18,11 +18,11 @@ from cpp     import  generate_diagrams as generate_diagrams_cpp
 class Interface(object):
     def __init__(self):   
       
-        with open("/sources/configuration.ini", 'r') as file:
+        with open(".\\sources\\configuration.ini", 'r') as file:
             self.filedir = json.load(file)
             print (self.filedir)
         try: 
-            with open("/sources/excludes.ini", 'r') as fich:
+            with open(".\\sources\\excludes.ini", 'r') as fich:
                 self.lstExcludes = json.load(fich)
                 print ("lstexcludes LOADED")
                 print (self.lstExcludes)
@@ -54,10 +54,10 @@ class Interface(object):
         #os.system(filename)
         
     def excludes(self,event):
-        os.startfile('/sources/excludes.ini')
+        os.startfile('.\\sources\\excludes.ini')
         
     def select_file(self, event):
-        with open('/sources/configuration.ini', mode='r') as fich:
+        with open('.\\sources\\configuration.ini', mode='r') as fich:
             try:
                 filename = tkFileDialog.askopenfilename(
                             title = "Select file to analyze",
@@ -80,11 +80,11 @@ class Interface(object):
         if filename:
             self.filedir['filename'] = filename
 
-            with open('/sources/configuration.ini', mode='w') as fich:
+            with open('.\\sources\\configuration.ini', mode='w') as fich:
                 json.dump(self.filedir, fich, indent = 2)
 
     def select_dir(self, event):
-        with open('/sources/configuration.ini', mode='r') as fich:
+        with open('.\\sources\\configuration.ini', mode='r') as fich:
             try:
                 dirname = tkFileDialog.askdirectory(
                                     initialdir = self.filedir['dirname'],#json.load(fich)["dirname"],
@@ -100,7 +100,7 @@ class Interface(object):
         if dirname:
             self.filedir['dirname'] = dirname
 
-            with open('/sources/configuration.ini', mode='w') as fich:
+            with open('.\\sources\\configuration.ini', mode='w') as fich:
                 json.dump(self.filedir, fich, indent = 2)
 
     #def __grafselect_click(self, label):
@@ -110,7 +110,7 @@ class Interface(object):
     def update(self, event):
         
         try: 
-            with open("/sources/excludes.ini", 'r') as fich:
+            with open(".\\sources\\excludes.ini", 'r') as fich:
                 self.lstExcludes = json.load(fich)
                 print ("lstexcludes LOADED")
                 print (self.lstExcludes)
@@ -186,7 +186,7 @@ class Excludes():
         #~ data=json.dumps(self.lstEx
         
         #~ os.system("pause")
-        with open('/sources/excludes.ini', mode='w') as fich:
+        with open('.\\sources\\excludes.ini', mode='w') as fich:
             json.dump(self.lstExcludes, fich)
             print ("SAVED in excludes.ini")
     
@@ -194,7 +194,7 @@ class Excludes():
         self.listExcludes.delete(0,END)
         self.lstExcludes=[]
         print (self.lstExcludes)
-        with open('/sources/excludes.ini', mode='w') as fich:
+        with open('.\\sources\\excludes.ini', mode='w') as fich:
             json.dump(self.lstExcludes, fich)
             print ("SAVED in excludes.ini")
         
