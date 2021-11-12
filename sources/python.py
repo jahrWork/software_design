@@ -541,12 +541,12 @@ class ProgramPython(object):
         return
 
     def generate_uses_simplediagram(self):
-        out = "graphs" + os.sep + "uses_simplediagram"
+        out = ".\\doc\\graphs" + os.sep + "uses_simplediagram"
         self._generate_diagram(out, False)
         pass
 
     def generate_uses_diagram(self):
-        out = "graphs" + os.sep + "uses_diagram"
+        out = ".\\doc\\graphs" + os.sep + "uses_diagram"
         self._generate_diagram(out, True)
         pass
 
