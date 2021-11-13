@@ -71,7 +71,7 @@ class CPP_Program(object):
         #print(" excluded modules =", excluded_modules)
       
         # first node of caller graph 
-        p = unitfile.name.split("\\")
+        p = unitfile.name.split( os.sep )
         p = p[-1]
         p = p.split(".")
         p = p[0]
@@ -94,7 +94,7 @@ class CPP_Program(object):
     def get_unit_name(self, unitfile):
         
         name =unitfile.name
-        name = name.rsplit("\\", 1)
+        name = name.rsplit( os.sep, 1)
         name = name[-1]
         return name 
   
@@ -192,6 +192,6 @@ def generate_diagrams(mainfile, dirname, excluded_modules):
     D.create_tree(main_node, D.uses_dictionary)
         
     D.G = pydot.Graph(margin=5.)
-    D.graph.write_pdf('.\\doc\\graphs\\uses_simplediagram.pdf')
-    D.graph.write_dot('.\\doc\\graphs\\uses_simplediagram.dot')
+    D.graph.write_pdf('doc' + os.sep + 'graphs' + os.sep + 'uses_simplediagram.pdf' )
+    D.graph.write_dot('doc' + os.sep + 'graphs' +os.sep + 'uses_simplediagram.dot')
     print("**** End simple uses")

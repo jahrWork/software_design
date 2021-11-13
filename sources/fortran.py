@@ -155,6 +155,6 @@ def generate_diagrams(filename, dirname, excluded_modules):
     D.create_tree(main_node, D.uses_dictionary)
         
     D.G = pydot.Graph(margin=5.)
-    D.graph.write_pdf('.\\doc\\graphs\\uses_simplediagram.pdf')
-    D.graph.write_dot('.\\doc\\graphs\\uses_simplediagram.dot')
+    D.graph.write_pdf('doc' +os.sep + 'graphs' + os.sep + 'uses_simplediagram.pdf')
+    D.graph.write_dot('doc' + os.sep + 'graphs' + os.sep + 'uses_simplediagram.dot')
     print("**** End simple uses")

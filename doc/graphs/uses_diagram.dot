@@ -1,16 +1,14 @@
 digraph G {
 	graph [dpi=300, name="Diagrama import"];
 	node [label="\N"];
-	graph [bb="0,0,135.31,288"];
-	module2 [label="{module2|{{class\l}|{class21}}}", shape=Mrecord, pos="68.306,96", width="1.4167", height="0.65278"];
-	time [label=time, shape=ellipse, pos="108.31,18", width="0.75", height="0.5"];
-	main [label="{main|{{class\l}|{Class1}}}", shape=Mrecord, pos="68.306,264", width="1.3611", height="0.65278"];
-	module1 [label="{module1|{{class\l}|{Class11}}}", shape=Mrecord, pos="68.306,180", width="1.4514", height="0.65278"];
-	main -> module1 [pos="e,68.306,203.1 68.306,240.59 68.306,232.12 68.306,222.3 68.306,213.1"];
-	module2 -> time [pos="e,99.651,35.444 80.091,72.609 84.743,63.769 90.113,53.566 94.911,44.449"];
-	main -> time [pos="e,116.14,35.279 100.31,240.78 111.7,230.97 123.21,218.38 129.31,204 133.22,194.78 133.56,99.878 128.31,72 126.58,62.831 123.38,53.179\
- 120.05,44.661"];
-	main -> module2 [pos="e,35.785,119.12 35.785,240.88 24.21,231.08 12.513,218.48 6.3057,204 -2.1019,184.39 -2.1019,175.61 6.3057,156 11.155,144.69 19.355\
-,134.52 28.23,125.95"];
-	module1 -> module2 [pos="e,68.306,119.1 68.306,156.59 68.306,148.12 68.306,138.3 68.306,129.1"];
+	graph [bb="0,0,275,192"];
+	class21 [label=class21, shape=ellipse, pos="228,18", width="1.0375", height="0.5"];
+	maing [label="{maing|{{class\l}|{Class1}}}", shape=Mrecord, pos="137,168", width="1.3611", height="0.65278"];
+	module1g [label=module1g, shape=ellipse, pos="46,90", width="1.2798", height="0.5"];
+	time [label=time, shape=ellipse, pos="137,90", width="0.75", height="0.5"];
+	module2g [shape=ellipse, pos="228,90", width="1.2798", height="0.5"];
+	module2g -> class21 [pos="e,228,36.104 228,71.697 228,63.983 228,54.712 228,46.112"];
+	maing -> time [pos="e,137,108.41 137,144.61 137,136.48 137,127.2 137,118.67"];
+	maing -> module1g [pos="e,64.552,106.49 110.19,144.61 98.262,134.65 84.261,122.95 72.384,113.03"];
+	maing -> module2g [pos="e,209.45,106.49 163.81,144.61 175.74,134.65 189.74,122.95 201.62,113.03"];
 }

@@ -31,7 +31,10 @@
     <Compile Include="sources\cpp.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="sources\python.py" />
+    <Compile Include="sources\python.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sources\python_old.py" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="my_env\">
