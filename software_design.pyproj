@@ -37,9 +37,6 @@
     <Compile Include="sources\python_old.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="requirements.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <InterpreterReference Include="Global|VisualStudio|Python39" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
