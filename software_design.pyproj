@@ -11,7 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>software_design</Name>
     <RootNamespace>software_design</RootNamespace>
-    <InterpreterId>MSBuild|my_env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>Global|VisualStudio|Python39</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,18 +37,10 @@
     <Compile Include="sources\python_old.py" />
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="my_env\">
-      <Id>my_env</Id>
-      <Version>3.9</Version>
-      <Description>my_env (Python 3.9 (64-bit))</Description>
-      <InterpreterPath>Scripts\python.exe</InterpreterPath>
-      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
-      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X64</Architecture>
-    </Interpreter>
+    <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="requirements.txt" />
+    <InterpreterReference Include="Global|VisualStudio|Python39" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

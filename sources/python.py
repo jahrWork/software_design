@@ -57,20 +57,34 @@ class CPP_Program(object):
         for line in file:
            w = line.split(' ')
            if len(w) ==2:
-               if w[0] == "import":  module = w[1]
-               if module  not in lines: lines.append(module)
+               if w[0] == "import":  
+                   module = w[1]
+                   module = module.rstrip()
+                   if module  not in lines: lines.append(module)
 
            elif len(w) > 2:
-             if w[0] == "from" and w[2] == "import": 
-                m = w[1]
-                ms = m.split('.') 
-                module = ms[len(ms)-1]
-                if module  not in lines: lines.append(module)
+             #if w[0] == "from" and w[2] == "import": 
+             #   m = w[1]
+             #   ms = m.split('.') 
+             #   module = ms[len(ms)-1]
+             #   if module  not in lines: lines.append(module)
+             if w[0] == "from" and w[2] == "import":  
+                 module = w[1]
+                 module = module.rstrip()
+                 if module  not in lines: lines.append(module)
+                #m = w[3] load module name or file name and not function inside module 
+               
+                #ms = m.split(',') 
+                #for module in ms: 
+                #  module = module.rstrip()
+                #  if module  not in lines: lines.append(module)
+
                      
              elif w[0] == "import" and w[2] == "as": 
                 m = w[1]
                 ms = m.split('.') 
                 module = ms[len(ms)-1]
+                module = module.rstrip()
                 if module  not in lines: lines.append(module)
                      
 
@@ -91,7 +105,7 @@ class CPP_Program(object):
         #uf = 
       
         use_lines = self.search_in_file2(unitfile) #ui + uf 
-        print("lines =", use_lines)
+        #print("lines =", use_lines)
         #exit()
         for i in range(0,len(use_lines)):
             
@@ -100,7 +114,7 @@ class CPP_Program(object):
         uses_list = [re.sub("^import\s+", "", l, flags=re.ASCII) for l in use_lines]
         nmbrexc=0
 
-        print("uses_list=", uses_list)
+        #print("uses_list=", uses_list)
         #exit()
         for i in range(0,len(uses_list)):
             i = i - nmbrexc
@@ -147,7 +161,7 @@ class CPP_Program(object):
   # It looks for "module" + module_name in file directory 
     def search_module_file(self, module_name, search_directory):
         
-        print("module_name =", module_name)
+        #print("module_name =", module_name)
         for root, dirnames, filenames in os.walk(search_directory):
             for filename in fnmatch.filter(filenames, '*.py'):
                 file_name = os.path.join(root, filename)
@@ -155,6 +169,7 @@ class CPP_Program(object):
                 name = filename.split(".")
                 name = name[0]
                 if name == module_name: 
+                        print( "FOUND module  " + module_name, "  filename =", filename)
                         return file_name
                 else:
                         continue
@@ -175,6 +190,7 @@ class CPP_Program(object):
         #print("Analyzed modules =", self.analyzed_modules) 
         #exit() 
 
+        print(" modules =", uses) 
         for module in uses:
             use_filename = self.search_module_file(module, search_directory)
             D[module] = []
