@@ -5,4 +5,4 @@ It extracts the hierarchical structure of modules written in python, C++ of Fort
 
 If python files are on different folders, use this approach to import different files: 
 
-![](/doc/graphs/import.png)
+![](/doc/example/python import from different folders/import.PNG)
